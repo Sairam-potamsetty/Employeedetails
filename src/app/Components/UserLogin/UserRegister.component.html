@@ -1,0 +1,107 @@
+<html>
+    <body>
+         <div class="container" >
+    <!-- REGISTER FORM -->
+     <div *ngIf="!userlogin">
+    <h2>REGISTER</h2>
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" [(ngModel)]="registeruser.UserName" />
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="text" [(ngModel)]="registeruser.Mobile" />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="registeruser.Password1" />
+    </div>
+
+    <div class="form-group">
+      <label>Re-enter Password</label>
+      <input type="password" [(ngModel)]="registeruser.Password2" />
+    </div>
+
+    <button (click)="Register()">Register</button>
+</div>
+    <div *ngIf="userlogin" class="success-message">
+      User Registered Successfully
+    </div>
+    </div>
+    </body>
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .success-message {
+      margin-top: 15px;
+      color: green;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .divider {
+      height: 2px;
+      background: #eee;
+      margin: 20px 0;
+    }
+  </style>
+</html>

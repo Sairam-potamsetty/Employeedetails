@@ -1,0 +1,88 @@
+<div class="sidenav" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleNav()">
+    ☰
+  </button>
+
+ <ul>
+    <li><a routerLink="/">🏠 Dashboard</a></li>
+    <li><a routerLink="/employees">👥 Employees</a></li>
+    <li><a routerLink="/register">📊 Register</a></li>
+    <li><a routerLink="/payment">⚙️ Payment</a></li>
+  </ul>
+  <button id="logout-btn" (click)="logout()">🚪 Logout</button>
+  
+</div>
+<div id="logout-area">
+</div>
+<div class="main-content" [class.expanded]="isCollapsed">
+  <router-outlet></router-outlet>
+</div>
+<style>
+  #logout-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  margin: 30px;
+  padding: 10px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+    .sidenav {
+  height: 100vh;
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #242526;
+  color: white;
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.sidenav.collapsed {
+  width: 60px;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidenav li {
+  padding: 12px 20px;
+}
+
+.sidenav a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #3a3b3c;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+.main-content.expanded {
+  margin-left: 60px;
+}
+
+</style>

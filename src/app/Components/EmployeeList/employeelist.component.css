@@ -1,0 +1,36 @@
+.container {
+  width: 60%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+.form{
+  display: none;
+}

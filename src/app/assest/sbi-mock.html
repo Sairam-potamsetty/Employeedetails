@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mock SBI Payment</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src *;">
+  <style>
+    body { font-family: Arial; background: #f7f7f7; text-align: center; margin-top: 60px; }
+    .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 400px; margin: auto; }
+    button { background: #007bff; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Mock SBI Payment Page</h2>
+    <p>This is a test environment.</p>
+    <button onclick="window.location.href='/payment-success'">Simulate Success</button>
+    <button onclick="window.location.href='/payment-failed'">Simulate Failure</button>
+  </div>
+</body>
+</html>

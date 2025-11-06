@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div *ngIf="ishide">
+              <button (click)="add()" >Add Task</button>
+    </div>
+   
+    <h2>📝 To-Do List</h2>
+     <div>
+        <input type="text" #search placeholder="Search by Name" id="sea" > 
+        <button (click)="searchTask(search.value)">Search</button>
+        <button (click)="ClearTask(search)">Clear</button>
+    </div>
+    <div *ngIf="!isEditMode">
+      <input type="text" placeholder="User Name" [(ngModel)]="task.name" required>
+        <input type="text" placeholder="User Age" [(ngModel)]="task.age" required>
+
+      <button (click)="addTask()" >Add Task</button>
+      </div>
+       <div>
+        <div *ngIf="isEditMode">
+            <input type="text" placeholder="User Name" [(ngModel)]="task.name" required>
+            <input type="text" placeholder="User Age" [(ngModel)]="task.age" required>
+            <button (click)="updateTask()">Update Task</button>
+            <button (click)="cancelEdit()">Cancel</button>
+        </div>
+    </div>
+    <ul>
+      <li *ngFor="let task of emp; let i = index">
+        {{ task.name }} ({{ task.age }} years old)
+        <button (click)="deleteTask(i)">Delete</button>
+        <button (click)="editTask(i)">Edit</button>
+      </li>
+    </ul>
+   
+</body>
+</html>
