@@ -68,8 +68,12 @@ export class UserLoginComponent
         if(this.userD.UserName==sessionStorage.getItem("username") && this.userD.Password==sessionStorage.getItem("password")){
             this.login=true;
             sessionStorage.setItem("Auth", 'true');
+<<<<<<< HEAD
       // navigate to root which uses SidenavComponent as parent layout
       this.router.navigate(['/']);
+=======
+            this.router.navigate(['/navbar']);
+>>>>>>> b30e667 (intial project commit)
         }
 
     }
