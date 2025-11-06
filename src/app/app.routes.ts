@@ -13,19 +13,29 @@ import { EmployeeCardComponent } from './Components/UserLogin/usercomponent.comp
 import { SidenavComponent } from './Components/sidenavbar/sidenavbar.component';
 import{UserRegisterComponent} from'./Components/UserLogin/UserRegister.component';
 export const routes: Routes = [
-  { path: '', redirectTo: 'employees', pathMatch: 'full' },
-  { path: 'employees', component: EmployeeListComponent },
-  { path: 'payment', component: RazorpayComponent },
-  { path: 'todolist', component: ToDoListComponent },
-  { path: 'addtaskcomponent', component: AddTaskComponent },
+  //   public routes
   { path: 'UserLoginComponent', component: UserLoginComponent },
-  { path: 'payment1', component: SbiPaymentComponent },
   { path: 'payment-success', component: PaymentSuccessComponent },
   { path: 'payment-failed', component: PaymentFailedComponent },
   { path: 'ForgotPassword', component: LogoutComponent },
-  { path: 'childcomponent', component: EmployeeListComponent1 },
-  { path: 'usercomponent', component: EmployeeCardComponent },
-  { path: 'navbar', component: SidenavComponent },
-  { path: 'register',component:UserRegisterComponent},
-  { path: '**', redirectTo: 'employees' } // fallback route
+
+  // protected/layout route: SidenavComponent holds the sidebar and a router-outlet
+  {
+    path: '',
+    component: SidenavComponent,
+    children: [
+      { path: '', redirectTo: 'employees', pathMatch: 'full' },
+      { path: 'employees', component: EmployeeListComponent },
+      { path: 'payment', component: RazorpayComponent },
+      { path: 'payment1', component: SbiPaymentComponent },
+      { path: 'todolist', component: ToDoListComponent },
+      { path: 'addtaskcomponent', component: AddTaskComponent },
+      { path: 'childcomponent', component: EmployeeListComponent1 },
+      { path: 'usercomponent', component: EmployeeCardComponent },
+      { path: 'register', component: UserRegisterComponent }
+    ]
+  },
+
+  // fallback
+  { path: '**', redirectTo: '' }
 ];
