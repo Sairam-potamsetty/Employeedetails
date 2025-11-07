@@ -13,5 +13,8 @@ export class App {
   // auth state can be read from sessionStorage when needed
   auth: boolean = sessionStorage.getItem('Auth') == 'true';
 
-  
+  sairam(): void {
+    this.auth = true;
+    sessionStorage.setItem('Auth', 'true');
+  }
 }
