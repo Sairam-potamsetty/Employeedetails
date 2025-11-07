@@ -12,4 +12,6 @@ export class App {
   protected readonly title = signal('EmployeeDetails');
   // auth state can be read from sessionStorage when needed
   auth: boolean = sessionStorage.getItem('Auth') == 'true';
+
+  
 }
